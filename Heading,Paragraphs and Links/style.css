@@ -1,6 +1,5 @@
 body {
   transition: background-color 0.5s;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .dark-mode {
   background-color: #333;
@@ -20,6 +19,7 @@ body {
   background-color: #ddd;
   border-radius: 25px;
   position: relative;
+  transition: background-color 0.3s;
 }
 .toggle-btn::before {
   content: '';
@@ -29,6 +29,9 @@ body {
   border-radius: 50%;
   background-color: #fff;
   transition: transform 0.3s;
+}
+.toggle-btn.dark-mode {
+  background-color: #555;
 }
 .toggle-btn.dark-mode::before {
   transform: translateX(25px);
