@@ -1,16 +1,23 @@
-const toggleBtn = document.querySelector(".toggle-btn");
+const themeButtons = document.querySelectorAll('.theme-button');
 
-// Check the initial setting based on user preference
-if (localStorage.getItem("darkMode") === "enabled") {
-  document.body.classList.add("dark-mode");
-  toggleBtn.classList.add("dark-mode");
-}
+  themeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const theme = button.dataset.theme;
+      document.body.dataset.theme = theme;
 
-function toggleDarkMode() {
-  document.body.classList.toggle("dark-mode");
-  toggleBtn.classList.toggle("dark-mode");
+      // Persist the user's choice (optional)
+      localStorage.setItem('theme', theme);
+    });
+  });
 
-  // Save user preference to local storage
-  const isDarkMode = document.body.classList.contains("dark-mode");
-  localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
-}
+  // Function to set the theme based on system preference
+  const setThemeFromPreference = () => {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.body.dataset.theme = prefersDark ? 'dark' : 'light';
+  };
+
+  // Check for system preference initially
+  setThemeFromPreference();
+
+  // Listen for changes in system preference
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setThemeFromPreference);
