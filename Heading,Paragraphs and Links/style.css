@@ -1,6 +1,22 @@
- /* General styles for the switcher */
- .theme-switcher {
-  position: fixed; /* Adjust position as needed */
+body {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark mode styles */
+body.dark-theme {
+  background-color: #222;
+  color: #eee;
+}
+
+/* Light mode styles */
+body.light-theme {
+  background-color: #fff;
+  color: #333;
+}
+
+/* General styles for the switcher */
+.theme-switcher {
+  position: fixed;
   top: 10px;
   right: 10px;
   display: flex;
@@ -8,22 +24,9 @@
 }
 
 .theme-button {
-  /* Basic styling for the buttons */
   background-color: #eee;
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
-
-/* Light mode styles */
-body[data-theme="light"] {
-  background-color: #fff;
-  color: #333;
-}
-
-/* Dark mode styles */
-body[data-theme="dark"] {
-  background-color: #222;
-  color: #eee;
 }

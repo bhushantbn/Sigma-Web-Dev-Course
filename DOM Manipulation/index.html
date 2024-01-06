@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom manipulate</title>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Favorite Movie</h1>
+        <ul>
+            <li class="items">The Matrix</li>
+            <li class="items">Star wars</li>
+            <li class="items">Dark Knight</li>
+            <li class="items">Lord of the rings</li>
+            <li class="items">Avengers</li>
+        </ul>
+
+    </div>
+</body>
+<script>
+    const myVar=document.querySelector('li')
+    myVar.style.color="red"
+
+    // creating element
+    const ulItem=document.querySelector('ul')
+    const li=document.createElement('li')
+    
+    ulItem.append(li)
+   
+
+    const newItem=document.querySelector('items')
+
+    li.innerText="Festival six"
+    li.classList.add('items')
+    console.log(li.classList.contains('items'));
+    li.remove()
+</script>
+</html>
