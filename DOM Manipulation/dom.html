@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
+  <title>DOM manipulate</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <style>
@@ -32,7 +32,7 @@
 </style>
 
 <body>
-  <div class="container">
+  <div class="container" id="boxContainer">
     <div class="box">Box1</div>
     <div class="box">Box2</div>
     <div class="box">Box3</div>
@@ -41,12 +41,12 @@
   </div>
   <h1>Heading one</h1>
   <script>
-    let divElements = document.querySelectorAll('div');
-
-    // Get the number of div elements in the entire document
-    let varOne = divElements.length;
-
-    console.log(varOne);
+    var divElements = document.querySelectorAll('body div')
+    console.log(divElements.length)
+    divElements.forEach(function(element){
+        var value=element.textContent 
+        console.log(value);
+    })
   </script>
 </body>
 
