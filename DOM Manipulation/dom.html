@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<style>
+  body {
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    background-color: yellow;
+    border: 2px solid black;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .box {
+    width: 35px;
+    height: 35px;
+    margin: 14px;
+    padding: 14px;
+    border: 2px solid black;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="box">Box1</div>
+    <div class="box">Box2</div>
+    <div class="box">Box3</div>
+    <div class="box">Box4</div>
+    <div class="box">Box5</div>
+  </div>
+  <h1>Heading one</h1>
+  <script>
+    let divElements = document.querySelectorAll('div');
+
+    // Get the number of div elements in the entire document
+    let varOne = divElements.length;
+
+    console.log(varOne);
+  </script>
+</body>
+
+</html>
